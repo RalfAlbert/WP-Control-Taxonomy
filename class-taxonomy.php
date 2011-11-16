@@ -2,14 +2,18 @@
 /**
  * Control Taxonomy for WordPress
  * @package  Wp_Control_Taxonomy
- * @version  0.0.2
- * @author   Frank Bültge <frank@bueltge.de>
+ * @version  0.0.3
+ * @author   Frank Bültge <frank@bueltge.de>, Ralf Albert <me@neun12.de>
  */
 
 if ( ! class_exists( 'Wp_Control_Taxonomy' ) ) {
 	
 	if ( function_exists( 'add_action' ) ) {
 		add_action( 'init', array( 'Wp_Control_Taxonomy', 'get_object' ) );
+	}
+
+	interface Wp_Control_Taxonomy_Interface {
+		public function get_textdomain();
 	}
 	
 	class Wp_Control_Taxonomy {
