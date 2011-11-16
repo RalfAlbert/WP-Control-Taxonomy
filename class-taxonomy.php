@@ -12,10 +12,6 @@ if ( ! class_exists( 'Wp_Control_Taxonomy' ) ) {
 		add_action( 'init', array( 'Wp_Control_Taxonomy', 'get_object' ) );
 	}
 
-	interface Wp_Control_Taxonomy_Interface {
-		public function get_textdomain();
-	}
-	
 	class Wp_Control_Taxonomy {
 		
 		/**
