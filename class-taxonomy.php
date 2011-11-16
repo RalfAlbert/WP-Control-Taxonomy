@@ -24,6 +24,13 @@ if ( ! class_exists( 'Wp_Control_Taxonomy' ) ) {
 		static private $classobj = NULL;
 
 		/**
+		 * 
+		 * The textdomain
+		 * @var string
+		 */
+		public $wpct_textdomain = null;
+		
+		/**
 		 * Initialize Class Object
 		 *
 		 * @since   0.0.2
@@ -89,7 +96,7 @@ if ( ! class_exists( 'Wp_Control_Taxonomy' ) ) {
 		}
 		
 		/**
-		 * Return string for textdomain from parent class
+		 * Return string for textdomain
 		 * 
 		 * @since   0.0.1
 		 * @uses    
@@ -97,8 +104,20 @@ if ( ! class_exists( 'Wp_Control_Taxonomy' ) ) {
 		 * @return  void
 		 */
 		public function get_text_domain() {
-			
-			return parent :: get_textdomain();
+			return $this->wpct_textdomain;;			
+		}
+		
+		/**
+		 * 
+		 * Set the textdomain
+		 * 
+		 * @since 0.0.3
+		 * @uses
+		 * @param string $textdomain
+		 * @return void
+		 */
+		public function set_textzdomain( $textdomain ) {
+			$this->wpct_textdomain = (string) $textdomain;
 		}
 		
 		/**
