@@ -72,6 +72,13 @@ if ( ! class_exists( 'Wp_Control_Taxonomy' ) ) {
 		 * @return  void
 		 */
 		public function __construct() {
+			// first check if the parent class implements our interface (Wp_Control_Taxonomy_Interface)
+			$reflection = new ReflectionClass( __CLASS__ );
+			if( ! $reflection->implementsInterface( 'Wp_Control_Taxonomy_Interface' ) ) {
+				// TODO: better error message
+				die( __( 'Wp_Control_Taxonomy_Interface was not implemented' ) );
+			}
+			
 			// Register the taxonomy.
 			add_action( 'init', array( $this, 'register_taxonomy' ) );
 			
